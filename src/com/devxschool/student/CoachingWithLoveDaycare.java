@@ -51,14 +51,43 @@ public class CoachingWithLoveDaycare {
 
 
         Scanner scan = new Scanner(System.in);
-        String name = "";
-        double age = 0;
         int price = 0;
         String childClass = "";
-        boolean agreement = false;
 
 
         // TODO WRITE YOUR CODE HERE
+        System.out.println("Enter child's name: ");
+        String name = scan.nextLine();
+
+        System.out.println("Enter age: ");
+        double age = scan.nextDouble();
+
+        if(age >= 1.5 && age <= 6){
+            if(age < 3){
+                price = 2000;
+                childClass = "Star";
+                System.out.println("Daycare fee is " + price);
+                System.out.println("Would you like to apply? ");
+            } else{
+                price = 1500;
+                childClass = "Sun";
+                System.out.println("Daycare fee is " + price);
+                System.out.println("Would you like to apply? ");
+            }
+        } else{
+            System.out.println(name + " is not accepted!");
+        }
+
+
+        boolean agreement = scan.nextBoolean();
+        if(agreement == true){
+            System.out.println("Congratulation! " + name + " is accepted!");
+            System.out.println(name + "'s class is " + childClass);
+        } else if(agreement == false){
+            System.out.println(name + " is not accepted! ");
+        } else{
+            System.out.println("Please enter a valid input ");
+        }
 
 
         //ignore this
